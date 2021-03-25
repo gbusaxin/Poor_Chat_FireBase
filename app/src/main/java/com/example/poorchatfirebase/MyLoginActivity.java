@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +32,7 @@ public class MyLoginActivity extends AppCompatActivity {
     TextView textViewSignUp;
 
     private FirebaseAuth mAuth;
+    private FirebaseUser firebaseUser;
 
     @OnClick(R.id.linearLayoutNextMyLoginActivity)
     void onClickNextMyLoginActivity(View view) {
@@ -72,7 +74,17 @@ public class MyLoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void singIn(String email,String password){
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null){
+            startActivity(new Intent(this, MainActivity.class));
+        }
+    }
+
+    public void singIn(String email, String password){
         Intent intent = new Intent(MyLoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
