@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "452111379946",
+    "project_id": "poor-chat-d9881",
+    "storage_bucket": "poor-chat-d9881.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452111379946:android:90da2e89751c5d8a83d693",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452111379946-7rjpf5los98av15mubi18p7v4opaj59a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB57opRXLqhSCV1D8v2psbtSqTQHv5DhyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452111379946-7rjpf5los98av15mubi18p7v4opaj59a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452111379946:android:2b01661376d9fdf583d693",
+        "android_client_info": {
+          "package_name": "com.example.poorchatfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452111379946-7rjpf5los98av15mubi18p7v4opaj59a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB57opRXLqhSCV1D8v2psbtSqTQHv5DhyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452111379946-7rjpf5los98av15mubi18p7v4opaj59a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Poor Chat FireBase</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="email_example">YourEmail@gmail.com</string>
+    <string name="password_example">Your Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="next">next</string>
+</resources>
