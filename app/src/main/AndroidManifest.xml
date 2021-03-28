@@ -12,13 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PoorChatFireBase">
         <activity android:name=".ChatActivity"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ProfileActivity"
+            android:theme="@style/ThemeMain.PoorChatFireBase"/>
+        <activity android:name=".SignUpActivity"
+            android:theme="@style/ThemeMain.PoorChatFireBase"/>
+        <activity android:name=".ForgotPasswordActivity"
+            android:theme="@style/ThemeMain.PoorChatFireBase"/>
+        <activity android:name=".MainActivity"
+            android:theme="@style/ThemeMain.PoorChatFireBase"/>
         <activity
             android:name=".MyLoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/ThemeMain.PoorChatFireBase">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

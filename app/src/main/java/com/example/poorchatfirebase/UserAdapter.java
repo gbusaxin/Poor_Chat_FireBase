@@ -33,7 +33,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     FirebaseDatabase database;
     DatabaseReference reference;
 
-    public UserAdapter (Context context,String username,List<String> userList) {
+    public UserAdapter(Context context, String username, List<String> userList) {
         this.username = username;
         this.context = context;
         this.userList = userList;
@@ -46,7 +46,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_item, parent, false);
 
         return new UserViewHolder(view);
 
@@ -64,16 +64,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
                 holder.username.setText(otherName);
 
-                if (imageURL.equals("null")){
+                if (imageURL.equals("null")) {
                     holder.userImage.setImageResource(R.drawable.user);
-                }else{
+                } else {
                     Picasso.get().load(imageURL).into(holder.userImage);
                 }
 
                 holder.cardView.setOnClickListener(v -> {
-                    Intent intent = new Intent(context,ChatActivity.class);
-                    intent.putExtra("userName",username);
-                    intent.putExtra("otherName",otherName);
+                    Intent intent = new Intent(context, ChatActivity.class);
+                    intent.putExtra("userName", username);
+                    intent.putExtra("otherName", otherName);
                     context.startActivity(intent);
                 });
 
@@ -92,15 +92,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return userList.size();
     }
 
-    public class UserViewHolder extends RecyclerView.ViewHolder{
+    public class UserViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.textViewUserNameItem)TextView username;
-        @BindView(R.id.circleImageViewUserItem)CircleImageView userImage;
-        @BindView(R.id.cardViewRVitem)CardView cardView;
+        @BindView(R.id.textViewUserNameItem)
+        TextView username;
+        @BindView(R.id.circleImageViewUserItem)
+        CircleImageView userImage;
+        @BindView(R.id.cardViewRVitem)
+        CardView cardView;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         list = new ArrayList<>();
 
         mAuth = FirebaseAuth.getInstance();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
                 userName = snapshot.getValue().toString();
                 getUsers();
-                userAdapter = new UserAdapter(MainActivity.this,userName,list);
+                userAdapter = new UserAdapter(MainActivity.this, userName, list);
                 recyclerView.setAdapter(userAdapter);
 
             }
@@ -72,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void getUsers(){
+    public void getUsers() {
         databaseReference.child("Users").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 String key = snapshot.getKey();
 
-                if (!key.equals(user.getUid())){
+                if (!key.equals(user.getUid())) {
 
                     list.add(key);
                     userAdapter.notifyDataSetChanged();
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.chat_menu,menu);
+        menuInflater.inflate(R.menu.chat_menu, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -119,12 +119,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == R.id.action_menu_my_profile){
-            startActivity(new Intent(this,ProfileActivity.class));
+        if (item.getItemId() == R.id.action_menu_my_profile) {
+            startActivity(new Intent(this, ProfileActivity.class));
         }
-        if (item.getItemId() == R.id.action_menu_sign_out){
+        if (item.getItemId() == R.id.action_menu_sign_out) {
             mAuth.signOut();
-            startActivity(new Intent(this,MyLoginActivity.class));
+            startActivity(new Intent(this, MyLoginActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
